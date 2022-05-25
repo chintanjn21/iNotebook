@@ -5,11 +5,12 @@ function Notestate(props) {
     const InitialNotes = []
     const [notes, setNotes] = useState(InitialNotes);
     let name, email;
+    const port = process.env.PORT || 5000;
 
     //Get all notes.
     const getnotes = async ()=>{
       //API Call
-      let url = process.env.REACT_APP_GETNOTE_URL;
+      let url = `http://localhost:${port}${process.env.REACT_APP_GETNOTE_URL}`;
         const response = await fetch(url, {
           method: 'GET',
           headers: {
@@ -26,7 +27,7 @@ function Notestate(props) {
     //Add a Note
     const addnote = async (title, description, tag)=>{
       //API Call
-      let url = process.env.REACT_APP_ADDNOTE_URL;
+      let url = `http://localhost:${port}${process.env.REACT_APP_ADDNOTE_URL}`;
         const response = await fetch(url, {
           method: 'POST',
           headers: {
@@ -44,7 +45,7 @@ function Notestate(props) {
     //Delete a Note
     const deletenote = async (id)=>{
       //API Call
-      let url = `${process.env.REACT_APP_DELETENOTE_URL}/${id}`;
+      let url = `http://localhost:${port}${process.env.REACT_APP_DELETENOTE_URL}/${id}`;
         const response = await fetch(url, {
           method: 'DELETE',
           headers: {
@@ -62,7 +63,7 @@ function Notestate(props) {
     //Edit a Note
     const editnote = async (id, title, description, tag)=>{
       //API Call
-        let url = `${process.env.REACT_APP_UPDATENOTE_URL}/${id}`;
+        let url = `http://localhost:${port}${process.env.REACT_APP_UPDATENOTE_URL}/${id}`;
         const response = await fetch(url, {
           method: 'PUT',
           headers: {
@@ -89,7 +90,7 @@ function Notestate(props) {
 
     const getuser = async ()=>{
       //API Call
-      let url = process.env.REACT_APP_GETUSER_URL;
+      let url = `http://localhost:${port}${process.env.REACT_APP_GETUSER_URL}`;
       const response = await fetch(url, {
         method: 'POST',
         headers: {

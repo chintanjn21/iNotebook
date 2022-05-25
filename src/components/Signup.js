@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+const port = process.env.PORT || 5000;
 const Signup = (props) => {
   const{showAlert} = props;
   const [credentials, setCredentials] = useState({ name:"", email: "", password: "", cpassword: "" });
@@ -17,7 +18,7 @@ const Signup = (props) => {
       
     }else{
     //API Call
-    let url = process.env.REACT_APP_SIGNUPUSER_URL;
+    let url = `http://localhost:${port}${process.env.REACT_APP_SIGNUPUSER_URL}`;
     const response = await fetch(url, {
       method: "POST",
       headers: {
