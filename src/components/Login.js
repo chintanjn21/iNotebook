@@ -15,7 +15,7 @@ const Login = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     //API Call
-    let url = `http://localhost:${port}${process.env.REACT_APP_LOGINUSER_URL}`;
+    let url = process.env.REACT_APP_LOGINUSER_URL;
     const response = await fetch(url, {
       method: "POST",
       headers: {

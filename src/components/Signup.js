@@ -18,7 +18,7 @@ const Signup = (props) => {
       
     }else{
     //API Call
-    let url = `http://localhost:${port}${process.env.REACT_APP_SIGNUPUSER_URL}`;
+    let url = process.env.REACT_APP_SIGNUPUSER_URL;
     const response = await fetch(url, {
       method: "POST",
       headers: {
