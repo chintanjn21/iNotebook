@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const JWT_TOKEN = 'iNotebook@2022';
+const JWT_TOKEN = 'EternalightInfotech';
 
 const fetchuser = (req, res, next) => {
     //Get the user from jwt token and add id to the request object
@@ -13,7 +13,6 @@ const fetchuser = (req, res, next) => {
         next();
     } catch (error) {
         res.status(401).send({error: 'Please authenticate using valid token'});
-        console.log('dfff');
     }
 }
 

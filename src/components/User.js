@@ -1,5 +1,4 @@
 import React, { useEffect, useContext, useState,  } from "react";
-import background from "./background.jpg";
 import noteContext from "../context/notes/noteContext";
 
 const User = () => {
@@ -8,9 +7,6 @@ const User = () => {
 
   useEffect(()=>{
     getuser();
-    // if(localStorage.getItem('name') === null){
-       // window.location.reload();
-    // }
     // eslint-disable-next-line
   },[]);
 
@@ -35,16 +31,6 @@ const User = () => {
         }}
       >
         <div className="upper" style={{ height: "100px" }}>
-          <img
-            src={background}
-            className="img-fluid"
-            style={{
-              width: "100%",
-              borderTopLeftRadius: "10px",
-              borderTopRightRadius: "10px",
-            }}
-            alt="dP"
-          />
         </div>
 
         <div className="user text-center" style={{ position: "relative" }}>

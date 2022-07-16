@@ -44,21 +44,6 @@ const Login = (props) => {
         style={{ height: "90vh", alignItems: "center" }}
       >
         <form onSubmit={handleSubmit}>
-          <div
-            className="text-center mb-2"
-            style={{ color: "rebeccapurple", fontSize: "2.7rem" }}
-          >
-            <i className="fa-solid fa-book-bookmark" /> iNotebook
-          </div>
-          <div
-            className="font-weight-bold"
-            style={{
-              backgroundColor: "black",
-              width: "6rem",
-              height: "0.1rem",
-              margin: "0 auto",
-            }}
-          ></div>
           <div className="mb-3 mt-5">
             <label
               htmlFor="exampleInputEmail1"

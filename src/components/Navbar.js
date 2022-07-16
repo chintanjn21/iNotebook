@@ -14,17 +14,6 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <Link
-          className="navbar-brand"
-          to="/"
-          style={{
-            color: "mediumpurple",
-            fontSize: "x-large",
-            fontWeight: "400",
-          }}
-        >
-          <i className="fa-solid fa-book-bookmark" /> iNotebook
-        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -37,29 +26,6 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <Link
-                className={`nav-link ${
-                  location.pathname === "/" ? "active" : ""
-                }`}
-                aria-current="page"
-                to="/"
-              >
-                Home
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                className={`nav-link ${
-                  location.pathname === "/about" ? "active" : ""
-                }`}
-                to="/about"
-              >
-                About
-              </Link>
-            </li>
-          </ul>
           {!localStorage.getItem("token") ? (
             <form className="d-flex">
               <Link
@@ -89,18 +55,6 @@ const Navbar = () => {
             </form>
           ) : (
             <form>
-              {/* <Link
-                className="btn mx-1"
-                to="/user"
-                style={{
-                  color: "black",
-                  backgroundColor: "mediumpurple",
-                  border: "none",
-                  borderRadius: "50%",
-                }}
-              >
-                <i className="fa-solid fa-user"/>
-              </Link> */}
               <button
                 className="btn mx-1"
                 style={{
